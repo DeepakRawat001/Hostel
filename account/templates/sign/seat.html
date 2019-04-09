@@ -1,0 +1,811 @@
+    <!--
+        Author: W3layouts
+        Author URL: http://w3layouts.com
+        License: Creative Commons Attribution 3.0 Unported
+        License URL: http://creativecommons.org/licenses/by/3.0/
+    -->
+
+
+    <!DOCTYPE html>
+    <html lang="zxx">
+    {% load staticfiles %}
+
+    <head>
+        <title>Room Selection</title>
+        <!-- Meta-Tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="keywords" content="Movie Seat Selection a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+        <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        </script>
+
+
+        <!-- //Meta-Tags -->
+        <!-- Index-Page-CSS-->
+
+
+        <link rel="stylesheet" type="text/css"href="{% static 'background/style.css' %}"/>
+        <link rel="stylesheet" type="text/css"href="{% static 'background/room1.css' %}"/>
+        <!-- //Custom-Stylesheet-Links -->
+        <!--fonts -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+        <!-- //fonts -->
+
+    </head>
+
+
+    <body onload="c()">
+        <h1>Room Selection</h1>
+             <center>
+                <!-- //input fields -->
+                <!-- seat availabilty list -->
+                <ul class="seat_w3ls">
+                    <li class="smallBox greenBox">Room Occupied</li>
+
+                    <li class="smallBox emptyBox">Empty Room</li>
+                 </ul></center>
+                <!-- seat availabilty list -->
+                <!-- seat layout -->
+        <form id="form" method="post" action="{% url 'check' %}">
+        {% csrf_token %}
+              <div class="container">
+                <div class="seatStructure txt-center" style="overflow-x:auto;">
+                     <center>
+                    <table id="seatsBlock">
+
+                        <p id="notification"></p>
+                        <tr>
+                            <td colspan="18"><b>Boy's Hostel</b></td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+
+                            <td>61</td>
+                            <td>62</td>
+                            <td class="seatGap"></td>
+                            <td>63</td>
+                            <td>64</td>
+                            <td></td>
+                            <td>65</td>
+                            <td>66</td>
+                            <td></td>
+                            <td>67</td>
+                            <td>68</td>
+                            <td></td>
+                            <td>69</td>
+                            <td>70</td>
+                            <td></td>
+                            <td>71</td>
+                            <td>72</td>
+
+                        </tr>
+                        <tr>
+                            <td rowspan="2"> 2nd Floor</td>
+                            <td>
+                                <input type="checkbox" class="seats"value="A1" name ="A2" id="60"onclick='a(60)'>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A2" id="61"onclick="a(61)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats"value="A1" name ="A2" id="62"onclick='a(62)'>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A4" id="63" onclick="a(63)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A5"id="64" onclick="a(64)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A6"id="65" onclick="a(65)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A7" id="66" onclick="a(66)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A8" id="67" onclick="a(67)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A9" id="68" onclick="a(68)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A10" id="69" onclick="a(69)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A11" id="70" onclick="a(70)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A12" id="71" onclick="a(71)">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="seats" value="B1"id="48" onclick="a(48)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B2" id="49" onclick="a(49)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B3" id="50" onclick="a(50)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B4" id="51" onclick="a(51)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B5" id="52" onclick="a(52)">
+                            </td>
+                             <td>
+                                <input type="checkbox" class="seats" value="B6" id="53" onclick="a(53)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B7" id="54" onclick="a(54)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B8" id="55" onclick="a(55)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B9" id="56" onclick="a(56)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B10" id="57" onclick="a(57)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B11" id="58" onclick="a(58)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B12" id="59" onclick="a(59)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <tr>
+                            <td></td>
+
+                            <td>49</td>
+                            <td>50</td>
+                            <td class="seatGap"></td>
+                            <td>51</td>
+                            <td>52</td>
+                            <td></td>
+                            <td>53</td>
+                            <td>54</td>
+                            <td></td>
+                            <td>55</td>
+                            <td>56</td>
+                            <td></td>
+                            <td>57</td>
+                            <td>58</td>
+                            <td></td>
+                            <td>59</td>
+                            <td>60</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>37</td>
+                            <td>38</td>
+                            <td class="seatGap"></td>
+                            <td>39</td>
+                            <td>40</td>
+                            <td></td>
+                            <td>41</td>
+                            <td>42</td>
+                            <td></td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td></td>
+                            <td>45</td>
+                            <td>46</td>
+                            <td></td>
+                            <td>47</td>
+                            <td>48</td>
+
+                        </tr>
+
+                        <tr>
+                           <td rowspan="2"> 1st Floor</td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B1" id="36" onclick="a(36)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B2" id="37" onclick="a(37)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B3" id="38" onclick="a(38)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B4" id="39" onclick="a(39)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B5" id="40" onclick="a(40)">
+                            </td>
+                             <td>
+                                <input type="checkbox" class="seats" value="B6" id="41" onclick="a(41)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B7" id="42" onclick="a(42)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B8" id="43" onclick="a(43)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B9" id="44" onclick="a(44)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B10" id="45" onclick="a(45)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B11" id="46" onclick="a(46)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B12" id="47" onclick="a(47)">
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td>
+                                <input type="checkbox" class="seats" value="B1"  id="24" onclick="a(24)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B2" id="25" onclick="a(25)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B3" id="26" onclick="a(26)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B4" id="27" onclick="a(27)">
+                            </td>
+                            <td class="seatGap"></td>
+
+                            <td>
+                                <input type="checkbox" class="seats" value="A1" id="28" onclick="a(28)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B5" id="29" onclick="a(29)">
+                            </td>
+                             <td class="seatGap"></td>
+                             <td>
+                                <input type="checkbox" class="seats" value="B6" id="30" onclick="a(30)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B7" id="31" onclick="a(31)">
+                            </td>
+                             <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B8" id="32" onclick="a(32)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B9" id="33" onclick="a(33)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B10" id="34" onclick="a(34)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B11" id="35" onclick="a(35)">
+                            </td>
+
+
+                        </tr>
+                        <tr>
+
+                            <td></td>
+
+                            <td>25</td>
+                            <td>26</td>
+                            <td class="seatGap"></td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td></td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td></td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td></td>
+                            <td>33</td>
+                            <td>34</td>
+                            <td></td>
+                            <td>35</td>
+                            <td>36</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>13</td>
+                            <td>14</td>
+                            <td class="seatGap"></td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td></td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td></td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td></td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td></td>
+                            <td>23</td>
+                            <td>24</td>
+
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Ground Floor</td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A1" id="12" onclick="a(12)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A2" id="13" onclick="a(13)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A3"  id="14" onclick="a(14)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="51"  id="15" onclick="a(15)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A5"  id="16" onclick="a(16)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A6"  id="17" onclick="a(17)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A7"  id="18" onclick="a(18)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A8" id="19" onclick="a(19)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A9" id="20" onclick="a(20)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A10"  id="21" onclick="a(21)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A11"  id="22" onclick="a(22)">
+                            </td>
+                             <td>
+                                <input type="checkbox" class="seats" value="A12"  id="23" onclick="a(23)">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <input type="checkbox" class="seats" value="B1"  id="0" onclick="a(0)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B2" id="1" onclick="a(1)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B3" id="2" onclick="a(2)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B4" id="3" onclick="a(3)">
+                            </td>
+                            <td class="seatGap"></td>
+
+                            <td>
+                                <input type="checkbox" class="seats" value="A1" id="4" onclick="a(4)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B5" id="5" onclick="a(5)">
+                            </td>
+                             <td class="seatGap"></td>
+                             <td>
+                                <input type="checkbox" class="seats" value="B6" id="6" onclick="a(6)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B7" id="7" onclick="a(7)">
+                            </td>
+                             <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B8" id="8" onclick="a(8)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B9" id="9" onclick="a(9)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B10" id="10" onclick="a(10)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B11" id="11" onclick="a(11)">
+                            </td>
+
+
+                        </tr>
+
+                            <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td class="seatGap"></td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td></td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td></td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td></td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td></td>
+                            <td>11</td>
+                            <td>12</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="18"><b>Girl's Hostel</b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+
+                            <td>109</td>
+                            <td>110</td>
+                            <td class="seatGap"></td>
+                            <td>111</td>
+                            <td>112</td>
+                            <td></td>
+                            <td>113</td>
+                            <td>114</td>
+                            <td></td>
+                            <td>115</td>
+                            <td>116</td>
+                            <td></td>
+                            <td>117</td>
+                            <td>118</td>
+                            <td></td>
+                            <td>119</td>
+                            <td>120</td>
+
+                        </tr>
+                        <tr>
+                            <td rowspan="2">1st Floor</td>
+
+                            <td>
+                                <input type="checkbox" class="seats" value="A1" id="108" onclick="a(108)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A2" id="109" onclick="a(109)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A3"  id="110" onclick="a(110)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="51"  id="111" onclick="a(111)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A5"  id="112" onclick="a(112)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A6"  id="113" onclick="a(113)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A7"  id="114" onclick="a(114)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A8" id="115" onclick="a(115)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A9" id="116" onclick="a(116)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A10"  id="117" onclick="a(117)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A11"  id="118" onclick="a(118)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A12"  id="119" onclick="a(119)">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="seats" value="B1"  id="96" onclick="a(96)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B2" id="97" onclick="a(97)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B3" id="98" onclick="a(98)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B4" id="99" onclick="a(99)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B5" id="100" onclick="a(100)">
+                            </td>
+                             <td>
+                                <input type="checkbox" class="seats" value="B6" id="101" onclick="a(101)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B7" id="102" onclick="a(102)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B8" id="103" onclick="a(103)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B9" id="104" onclick="a(104)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B10" id="105" onclick="a(105)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B11" id="106" onclick="a(106)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B12" id="107" onclick="a(107)">
+                            </td>
+                        </tr>
+
+                            <tr>
+                            <td></td>
+                            <td>97</td>
+                            <td>98</td>
+                            <td class="seatGap"></td>
+                            <td>99</td>
+                            <td>100</td>
+                            <td></td>
+                            <td>101</td>
+                            <td>102</td>
+                            <td></td>
+                            <td>103</td>
+                            <td>104</td>
+                            <td></td>
+                            <td>105</td>
+                            <td>106</td>
+                            <td></td>
+                            <td>107</td>
+                            <td>108</td>
+
+                        </tr>
+                         <tr>
+                            <td></td>
+
+                            <td>85</td>
+                            <td>86</td>
+                            <td class="seatGap"></td>
+                            <td>87</td>
+                            <td>88</td>
+                            <td></td>
+                            <td>89</td>
+                            <td>90</td>
+                            <td></td>
+                            <td>91</td>
+                            <td>92</td>
+                            <td></td>
+                            <td>93</td>
+                            <td>94</td>
+                            <td></td>
+                            <td>95</td>
+                            <td>96</td>
+
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Ground Floor</td>
+
+                            <td>
+                                <input type="checkbox" class="seats" value="A1" id="84" onclick="a(84)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A2" id="85" onclick="a(85)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A3"  id="86" onclick="a(86)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="51"  id="87" onclick="a(87)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A5"  id="88" onclick="a(88)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A6"  id="89" onclick="a(89)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A7"  id="90" onclick="a(90)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A8" id="91" onclick="a(91)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A9" id="92" onclick="a(92)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A10"  id="93" onclick="a(93)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A11"  id="94" onclick="a(94)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="A12"  id="95" onclick="a(95)">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="seats" value="B1"  id="72" onclick="a(72)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B2" id="73" onclick="a(73)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B3" id="74" onclick="a(74)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B4" id="75" onclick="a(75)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B5" id="76" onclick="a(76)">
+                            </td>
+                             <td>
+                                <input type="checkbox" class="seats" value="B6" id="77" onclick="a(77)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B7" id="78" onclick="a(78)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B8" id="79" onclick="a(79)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B9" id="80" onclick="a(80)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B10" id="81" onclick="a(81)">
+                            </td>
+                            <td class="seatGap"></td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B11" id="82" onclick="a(82)">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="seats" value="B12" id="83" onclick="a(83)">
+                            </td>
+                        </tr>
+
+                            <tr>
+                            <td></td>
+                            <td>73</td>
+                            <td>74</td>
+                            <td class="seatGap"></td>
+                            <td>75</td>
+                            <td>76</td>
+                            <td></td>
+                            <td>77</td>
+                            <td>78</td>
+                            <td></td>
+                            <td>79</td>
+                            <td>80</td>
+                            <td></td>
+                            <td>81</td>
+                            <td>82</td>
+                            <td></td>
+                            <td>83</td>
+                            <td>84</td>
+
+                        </tr>
+
+
+
+                        </center>
+                    </table>
+                    <input type="hidden" name="room" id="room">
+                     <input type="hidden" name="occupied" id="occupied"value="{{occupied}}">
+                     <input type="hidden" name="empty" id="empty"value="{{empty}}">
+                    </form>
+
+            </div>
+        </div>
+
+       </center>
+        <!-- js -->
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <!-- //js -->
+        <!-- script for seat selection -->
+        <script>
+        function c(){
+            var b=document.getElementsByClassName('seats');
+            var x=document.getElementById('occupied').value;
+            var y=document.getElementById('empty').value;
+           // alert("hello h");
+            var c=(x.split(","));
+            var n=b.length;
+            //document.write(n);
+             for(var i=0;i<=n;i++){
+                var j=i+1;
+                var z=j.toString();
+                 var p=i.toString();
+                if(c.indexOf(z)>=0){
+                   document.getElementById(p).checked=true;
+                   }
+                   //document.write(i);
+                   }
+
+
+        }
+
+        function a(x){
+            var b=document.getElementsByClassName('seats');
+            //creating the input box and then sending its value to the server
+             document.getElementById("room").value=x+1;
+             document.getElementById("form").submit();
+                }
+
+
+
+
+
+
+
+
+        </script> -->
+        <!-- //script for seat selection -->
+
+    </body>
+
+    </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>navbar</title>
+    <link href="{% static 'background/index/css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'background/index/img/favicon.png'%}" rel="icon">
+  <link href="{% static 'background/index/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'background/index/lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'background/index/lib/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+  <link href="{% static 'background/index/lib/animate/animate.min.css'%}" rel="stylesheet">
+</head>
+<body bgcolor="grey">
+
+       <header id="header">
+
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li><a href="#About">About Us</a></li>
+          <li><a href="sign/login/">Login</a></li>
+          <li><a href="sign/signup/">Sign Up</a></li>
+          <li><a href="sign/seat/">Rooms</a></li>
+          <li><a href="sign/data2/">Search</a></li>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header>
+</body>
+{% block head %}
+{%endblock %}
+</html>

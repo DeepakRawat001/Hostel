@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>notice</title>
+</head>
+<body bgcolor="wheat" text="red">
+<!--<h1>{{key3.Room_Number}}</h1> -->
+{% for i in key2 %}
+<h2>subject:-</h2>
+    <h1>{{i.subject}}</h1>
+<h2>Content:-</h2>
+    <h1>{{i.notice}}</h1>
+    <h1>{{i.Date}}</h1><br>
+{% endfor %}
+</body>
+</html>
