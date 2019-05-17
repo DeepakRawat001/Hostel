@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>Room Detail</title>
 
     <!-- Font Icon -->
+
+     <link rel="stylesheet" href="{% static 'background/dropdown/drop.css'%}">
     <link rel="stylesheet" href="{% static 'background/room/fonts/material-icon/css/material-design-iconic-font.min.css'%}">
 
     <!-- Main css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="{% static 'background/room/css/style.css'%}">
+
 </head>
 <body>
 
@@ -23,24 +28,36 @@
                 <div class="signup-content">
                     <form  id="signup-form" class="signup-form" action="{% url 'add' %}" method="post">
     {% csrf_token %}
+                        <canter><b><label>{{error}}</label></canter></b><br>
                         <h2 class="form-title">Room Detail</h2>
                         <div class="form-group">
                             <label>Block Name</label>
-                            <input type="text" class="form-input" name="BlockName" value="{{BlockName}}" id="name" >
+                            <input type="text" class="form-input" readonly="readonly" name="BlockName" value="{{BlockName}}" id="name" >
                         </div>
                         <div class="form-group">
                             <label>Room Number</label>
-                            <input type="text" class="form-input" name="RoomNumber" value="{{RoomNumber}}" id="email" >
+                            <input type="text" class="form-input" readonly="readonly"name="RoomNumber" value="{{RoomNumber}}" id="email" >
                         </div>
                         <div class="form-group">
                               <label>Bed Availabel</label>
 
-                            <input type="text" class="form-input" name="BedAvailabel" id="password" value="{{BedAvailabel}}">
+                            <input type="text" class="form-input" name="BedAvailabel"readonly="readonly" id="password" value="{{BedAvailabel}}">
 
                         </div>
-                        <div class="form-group">
+
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Existing Student
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {% for i in name %}
+                                <a class="dropdown-item" href="#">{{i}}</a>
+                            {% endfor %}
+                          </div>
+                        </div>
+                                                <div class="form-group">
                             <label>Student To Add</label>
-                            <input type="text" class="form-input" name="name" id="re_password" placeholder="Student Name"/>
+                            <input type="text" class="form-input" name="register" id="re_password" placeholder="Registration Number"/>
                         </div>
 
                         <div class="form-group">
@@ -57,5 +74,10 @@
     <!-- JS -->
     <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <script src="{% static 'js/main.js'%}"></script>
+     <link rel="stylesheet" href="{% static 'background/dropdown/menu.js'%}">
+    <!-- drop down menu -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

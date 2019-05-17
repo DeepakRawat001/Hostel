@@ -1,17 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>notice</title>
-</head>
-<body bgcolor="wheat" text="red">
-<!--<h1>{{key3.Room_Number}}</h1> -->
-{% for i in key2 %}
-<h2>subject:-</h2>
-    <h1>{{i.subject}}</h1>
-<h2>Content:-</h2>
-    <h1>{{i.notice}}</h1>
-    <h1>{{i.Date}}</h1><br>
-{% endfor %}
-</body>
+<html>
+{% load staticfiles %}
+	<head>
+		<title>Notice Board</title>
+		<style>
+		#main{
+			margin:auto;
+			padding:3px;
+			border:solid green 2px;
+			height:550px;
+			width:500px;
+		}
+		#main{
+			padding:60px 40px;
+			margin-top:40px;
+			-webkit-box-shadow: -1px 4px 34px 16px rgba(0,0,0,0.75);
+			-moz-box-shadow: -1px 4px 34px 16px rgba(0,0,0,0.75);
+			 box-shadow: -1px 4px 40px 16px rgba(0,0,0,0.75);
+		}
+		.content{
+			width:300px;
+			margin:10px auto;
+			box-shadow: 1px 1px 0px 5px #333;
+			border-radius:5px;
+			overflow:hidden;
+		}
+		.header{
+			color:white;
+			padding:10px;
+		}
+		</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		 <link rel="stylesheet" type="text/css"href="{% static 'background/notice.css' %}"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	</head>
+		<body background="12.jpg">
+
+			 <form id="form" method="post" action="{% url 'submit' %}">
+        {% csrf_token %}
+
+			<div id="main" class="container">
+				<div class="content">
+					<h2 align="center" class="header">NOTICE</h2>
+
+				</div>
+					<center>
+
+						<!-- Material input -->
+						<div class="md-form">
+						  <input type="text" id="form1" class="form-control" name="subject" placeholder="subject" {{key2}} value={{key.subject}}>
+						</div>
+					 	<br>
+
+
+						<textarea name="body" class="form-control" {{key2}} rows="14" id="comment" >{{key.notice}}</textarea>
+
+
+					
+					</center>
+					<br>
+					<button type="Submit" class="btn btn-success btn-block">Submit</button>		
+			</div>
+			 </form>
+
+		</body>
 </html>

@@ -1,0 +1,156 @@
+<html>
+{{% load staticfiles %}
+	<head>
+		<title>About Us</title>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		 <link rel="stylesheet" type="text/css"href="{% static 'background/about.css' %}"/>
+		<style>
+			body{
+
+				color: white;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: "open sans",sans-serif;
+			}
+			.about-section{
+				width:100%;
+				background-color; grey ;
+				padding: 40px 0;
+			}
+			.inner-width{
+				max-width: 1000px;
+				overflow: hidden;
+				padding: 0 20px;
+				margin: auto;
+				
+			}
+			.about-section h1{
+				text-align: center;
+			}
+			.border{
+				width: 100px;
+				height: 3px;
+				background: #e74c3c;
+				margin: 40px auto;
+			}
+			.about-section-row{
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.about-section-col{
+				flex: 50%;
+			}
+			.about{
+				padding-right: 30px;
+			}
+		    .about p{
+				text-align: justify;
+				margin-bottom: 20px;	
+			}
+			.skills{
+				padding-left: 30px;
+				
+			}
+			.skill{
+				margin-bottom: 10px;
+			}
+			.progress{
+				width: 100%;
+				height: 12px;
+				background: #ddd;
+				border-radius: 12px;
+				
+			}
+			.progress-bar{
+				width: 80px;
+				height: 12px;
+				background: #e74c3c;
+				border-radius: 12px;
+			}
+			.p1{
+				width: 90%;
+				
+			}
+			.p2{
+				width:87%;
+			}
+			.p3{
+				width: 99%;
+			}
+			.progress-bar span{
+				float: right;
+				margin-right: 6px;
+				line-height: 13px;
+				color: #fff;
+				font-size: 12px;
+			
+			}
+			@media screen and (max-width: 700px){
+				.about-section-col{
+					flex: 100%
+					margin: 10px 0;
+				}
+				.about,.skills{
+					padding: 0;
+				}
+				.about{
+					text-align: center;
+				}
+			}
+			p{
+				font-family:'verdana',serif;
+				font-size: 25px;
+			}
+		</style>
+	</head>
+		<body>
+			<div class="about-section">
+				<div class="inner-width">
+					<h1>About Us</h1>
+					<div class="border"></div>
+					<div class="about-section-row">
+						<div class="about-section-col">
+						 <div class="about">
+							<p>
+								Amrapali Institute having Hostels for both boys and girls welcoming you. It is located under the boundary of the campus. The area is the first choice for the students. Amrapali Institute offers the best value for money with the following facilities:
+								<br>
+								<br>*Free High-speed Wi-Fi.
+									<br>*Free computers for Internet.
+							</p>
+						 </div>
+					   </div>
+							<div class="about-section-col">
+								<div class="skills">
+									<div class="skill">
+									 <div class="title">Facilities</div>
+									 <div class="progress">
+									 <div class="progress-bar p1"><span>90%</span></div>
+									 </div>
+									</div>
+									 
+										<div class="skill">
+									 <div class="title">Environment</div>
+									 <div class="progress">
+									 <div class="progress-bar p2"><span>89%</span></div>
+									 </div>
+									</div>
+									   	<div class="skill">
+									 <div class="title">Security</div>
+									 <div class="progress">
+									 <div class="progress-bar p3"><span>99%</span></div>
+									 </div>
+								 </div>
+						</div>
+					</div>
+				</div>	
+			
+		    </div>	
+			
+		</body>
+</html>

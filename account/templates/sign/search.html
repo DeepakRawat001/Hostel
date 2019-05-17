@@ -10,19 +10,27 @@
 
   </head>
   <body>
+
+
     <div class="s003">
       <form name="form" method="get" action="{% url 'result1' %}">
+
+        <font face="verdana" color="red"><center>{{error}}</center></font>
+        <br>
+        <br>
         <div class="inner-form">
           <div class="input-field first-wrap">
             <div class="input-select">
               <select data-trigger="" name="query">
                 <option placeholder="">Category</option>
-                <option>Room</option>
-                <option>floor</option>
+                <option>Room Number
+                </option>
+
                 <option>Course</option>
                 <option>Blood Group</option>
                 <option>Gender</option>
-                <option>State</option>
+                 <option>Registration Number</option>
+
               
               </select>
             </div>

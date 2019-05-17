@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Student</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'background/add/fonts/material-icon/css/material-design-iconic-font.min.css'%}">
+    <link rel="stylesheet" href="{% static 'background/add/vendor/nouislider/nouislider.min.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'background/add/css/style.css'%}">
+	
+		
+	
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img" id="fdiv">
+                    <img src="{% static 'background/add/images/form-img.jpg'%}" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>While Rooms are available !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="{% url 'studentRegister' %}" enctype="multiport/form-data">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    <input type="text" name="first name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="last name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Fathers Name</label>
+                                    <input type="text" name="father name" id="Fname" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phone number" id="phone_number" />
+                                </div>
+                                 <div class="form-input">
+                                    <label for="payable" class="required">Blood Group</label>
+                                    <input type="text" name="blood" id="address" />
+                                </div>
+                            </div>
+                            <div class="form-group" >
+                                <div class="form-select" >
+                                    <div class="label-flex">
+                                        <label for="course" class="required">Course</label>
+                                 
+									</div>
+                                    <div class="select-list">
+                                        
+											<select class="form-control" id="course" name="course">
+												<option>BCA</option>
+												<option>BBA</option>
+												<option>HM</option>
+												<option>BTECH</option>
+												<option>BCOM</option>
+											</select>
+                                    </div>
+                                </div>
+                                <div class="form-radio">
+                                    <div class="label-flex">
+                                        <label for="payment" class="required">Gender</label>
+                                    
+                                    </div>
+                                    <div class="form-radio-group">            
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="gender" value="male" id="Male" checked>
+                                            <label for="cash" >Male</label>
+                                            <span class="check"></span>
+											
+                                        </div>
+                                       
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="gender" value="female" id="Female">
+                                            <label for="Female" >Female</label>
+                                            <span class="check"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="Registration No.">Registration No.</label>
+                                    <input type="text" name="registration" id="Rno." />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Fathers Number">Fathers Number</label>
+                                    <input type="text" name="father number" id="Fname" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable">Address</label>
+                                    <input type="text" name="address" id="address" />
+                                </div>
+
+                            </div>
+                        </div>
+						<div>
+							
+							<label>Image<input type="file" name="image1" accept="image/*"></label>
+						</div>
+                        <div class="DOB">
+							<label>Date of Birth</label>	
+							<input type="date" name="dob">
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                           <!-- <input type="submit" value="Reset" class="submit" id="reset" name="reset" />-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

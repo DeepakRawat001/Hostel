@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed table header</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="{% static 'background/SearchResult/css/style.css'%}">
+
+  
+</head>
+
+<body>
+  <section>
+  <!--for demo wrap-->
+  <h1>Student Detail</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Sr No.</th>
+          <th>Registration No.</th>
+          <th>Student Name</th>
+          <th>Course</th>
+          <th>Mobile No.</th>
+          <th>Email Id</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      {% for i in key %}
+       <tr>
+          <td>{{i.student_name}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.subject}}</td>
+          <td>{{i.roll_no}}</td>
+          <td>{{i.body}}</td>
+         <td>{{i.date}}</td>
+           </tr>
+      {% endfor %}
+
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- follow me template -->
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

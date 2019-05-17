@@ -1,0 +1,79 @@
+<html>
+{% load staticfiles %}
+	<head>
+		<title>Complain</title>
+		<style>
+		#main{
+			margin:auto;
+			padding:3px;
+			border:solid green 2px;
+			height:600px;
+			width:500px;
+		}
+		form{
+			margin-top:50px;
+			transition:all 4s ease-in-out;
+			
+		}
+		.form-cotrol{
+			width:600px;
+			background:transparent;
+			border:none;
+			outline:none;
+			border-bottom:1px solid gray;
+			color:#fff;
+			font-size:18px;
+			margin-bottom:16px;
+		}
+		input{
+			height:45px;
+		}
+		form .submit{
+			background-color:#ff5722;
+			border-color:transparent;
+			color:white;
+			font-size=20px;
+			font-weight:bold;
+			letter-spacing:2px;
+			height:50px;
+			margin-top:20px;
+		}
+		form .submit:hover{
+			background-color:#f44336;
+			cursor:poiter;
+		}
+		#main{
+			padding:60px 40px;
+			margin-top:40px;
+			-webkit-box-shadow: -1px 4px 34px 16px rgba(0,0,0,0.75);
+			-moz-box-shadow: -1px 4px 34px 16px rgba(0,0,0,0.75);
+			 box-shadow: -1px 4px 40px 16px rgba(0,0,0,0.75);
+		}
+		body{
+			background:url("13.jpg");
+		}
+		</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		 <link rel="stylesheet" type="text/css"href="{% static 'background/complain.css' %}"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	</head>
+	<body>
+		<div id="main" class="contact-text">
+			<h2 align="center">Complain Box</h2>
+			<form id="complain" name="form" method="post" action="{% url 'hello' %}">
+				{{b}}
+{% csrf_token %}
+				<input name="name" type="text"  class="form-control" {{key2}} Placeholder="Your Name" required value={{key.student_name}}><br>
+				<input name="rollno" type="text"  class="form-control" {{key2}} placeholder="Roll Number"required  value={{key.roll_no}}><br>
+				<input name="email" type="email"  class="form-control" {{key2}} Placeholder="Email"required  value={{key.email}}><br>
+				<input name="subject" type="text"    class="form-control" {{key2}} Placeholder="Subject"required value={{key.subject}}><br>
+				<textarea name="body" class="form-control"   Placeholder="Complain"{{key2}}  rows="4"required>{{key.body}}</textarea><br>
+				<input type="Submit" class="form-control submit" value={{key3}}>
+			</form>
+		</div>
+	</body>
+</html>

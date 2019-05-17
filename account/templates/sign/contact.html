@@ -33,7 +33,9 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form"  method="post" action="{% url 'entry' %}">
+    {% csrf_token %}
+				{{error}}
 				<span class="contact100-form-title">
 					Send Us A Message
 				</span>
@@ -85,7 +87,7 @@
 						</span>
 
 						<span class="txt2">
-							Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
+							Amrapali Institute,Shiksha Nagar ,Lamachaur Haldwani
 						</span>
 					</div>
 				</div>
@@ -101,7 +103,7 @@
 						</span>
 
 						<span class="txt3">
-							+1 800 1236879
+							+91 7533992362
 						</span>
 					</div>
 				</div>
@@ -117,7 +119,7 @@
 						</span>
 
 						<span class="txt3">
-							contact@example.com
+							rawatdeepak.dr34@gmail.com
 						</span>
 					</div>
 				</div>
